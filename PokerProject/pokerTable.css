@@ -1,0 +1,72 @@
+body {
+  background: url("pokertable.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  overflow: hidden;
+}
+
+.pokercard {
+  width: 15%;
+  height: 15%;
+}
+
+.pot{
+  position: fixed;
+  bottom: 65%;
+  right: 50%;
+}
+
+.randomCard {
+  display: inline-block;
+  height: 15%;
+}
+
+.flop1 {
+  position: fixed;
+  bottom: 50%;
+  right: 70%;
+}
+.flop2 {
+  position: fixed;
+  bottom: 50%;
+  right: 60%;
+}
+
+.flop3 {
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+}
+
+.turn{
+  position: fixed;
+  bottom: 50%;
+  right: 40%;
+}
+
+.river1{
+  position: fixed;
+  bottom: 50%;
+  right: 30%;
+}
+
+.character{
+  height: 20%;
+}
+
+.character1 {
+  display: inline-block;
+  position: fixed;
+  bottom: 65%;
+  right: 80%;
+}
+
+.character2 {
+  display: inline-block;
+  position: fixed;
+  bottom: 65%;
+  right: 13%;
+}
