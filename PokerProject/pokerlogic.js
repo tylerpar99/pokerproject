@@ -17,14 +17,14 @@ $( document ).ready(function(){
       mouseenter: function () {
         if(this.id == "card1" ){
           console.log(card1)
-        $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/PNG-cards-1.3/' + card1 + '.png');
+        $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + card1 + '.png');
       }else{
         console.log(card2)
-        $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/PNG-cards-1.3/' + card2 + '.png');
+        $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + card2 + '.png');
       }
       },
       mouseleave: function () {
-        $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/PNG-cards-1.3/0.png');
+        $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/0.png');
       }
   });
 });
@@ -108,7 +108,7 @@ function randomCard(){
 }
 function showCard(id, val){
   console.log(id)
-  $(id).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/PNG-cards-1.3/' + val + '.png');
+  $(id).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + val + '.png');
 };
 
 var totalPot = 0

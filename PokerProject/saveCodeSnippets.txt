@@ -1,0 +1,16 @@
+On hover show a card (jQuery):
+
+$(".pokercard").on({
+    mouseenter: function () {
+      if(this.id == "card1" ){
+        console.log(card1)
+      $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/PNG-cards-1.3/' + card1 + '.png');
+    }else{
+      console.log(card2)
+      $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/PNG-cards-1.3/' + card2 + '.png');
+    }
+    },
+    mouseleave: function () {
+      $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/PNG-cards-1.3/0.png');
+    }
+});
