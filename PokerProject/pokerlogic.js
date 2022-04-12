@@ -11,22 +11,9 @@ $( document ).ready(function(){
       else{
         betMoney(amount);
       }
+      playersTurn(true)
     }
 });
-  $(".pokercard").on({
-      mouseenter: function () {
-        if(this.id == "card1" ){
-          console.log(card1)
-        $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + card1 + '.png');
-      }else{
-        console.log(card2)
-        $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + card2 + '.png');
-      }
-      },
-      mouseleave: function () {
-        $(this).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/0.png');
-      }
-  });
 });
 
 var card1 = "0"
@@ -50,27 +37,47 @@ function playerHand(){
 
 var cardsUsed = []
 function playGame(){
-  var userHand = playerHand()
+  var userHand = playerHand();
   comp1card1 = randomCard();
   comp1card2 = randomCard();
   comp2card2 = randomCard();
   comp2card1 = randomCard();
+  $('#card1').attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + card1 + '.png');
+  $('#card2').attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + card2 + '.png');
   var computer1 = [comp1card1, comp2card1]
   var computer2 = [comp2card1, comp2card2]
-  $(".progress").attr("hidden", false);
-  var runTime = window.setInterval(runTimer, 1000)
-  var stopRun = window.setInterval(function(){
-    if(timer == 0){
-      clearInterval(runTime)
-      clearInterval(stopRun)
-    }
-  }, 1000)
   var visCommunity = [randomCard(), randomCard(), randomCard()]
+  playersTurn()
+
 
 };
 
+var runTime = null
+var stopRun = null
+function playersTurn(kill){
+  if(!kill){
+  $(".progress").attr("hidden", false);
+  $(".playerControls").attr("hidden", false)
+  runTime = window.setInterval(runTimer, 1000)
+  stopRun = window.setInterval(function(){
+    if(timer == 0){
+      $(".playerControls").attr("hidden", true)
+      $(".progress").attr("hidden", true)
+      playerFold()
+      clearInterval(runTime)
+      clearInterval(stopRun)
+    }
+    }, 1000)
+    return
+  }
+  $(".playerControls").attr("hidden", true)
+  $(".progress").hide();
+  clearInterval(runTime)
+  clearInterval(stopRun)
+  };
 var timer = 10
 function runTimer(){
+  console.log("Running")
   timer = timer - 1;
   $("#gameTimer").attr("style", "width:"+timer+"0%")
   if(timer < 6 && timer > 3){
@@ -80,7 +87,6 @@ function runTimer(){
     $("#gameTimer").attr({style: "width:"+timer+"0%", class: "progress-bar bg-danger"})
   }
   else if (timer == 0){
-    console.log("Hide")
     $(".progress").hide();
   }
   return
@@ -127,6 +133,7 @@ function betMoney(amount){
   runningPot(parseInt(amount, 10));
   totalBalance(amount);
   $("#customBet").val("").blur()
+  playersTurn(true)
 };
 
 var balance = 5000;
@@ -150,5 +157,9 @@ function evaluateHand(hand1, hand2, hand3, visCommunity){
 }
 
 function playerFold(){
+
+  $(".pokercard").attr('class', 'float-end pokercard fold')
   $(".playerControls").hide()
+  $(".playerGroup").prepend('<p class="stamp">FOLD</p>')
+  playersTurn(true)
 }

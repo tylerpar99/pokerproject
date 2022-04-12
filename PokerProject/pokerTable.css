@@ -13,6 +13,17 @@ body {
   height: 15%;
 }
 
+.fold{
+  filter: brightness(50%)
+}
+
+.stamp{
+  position: relative;
+  font-size: 400%;
+  color: red;
+  font-weight: bold;
+}
+
 .pot{
   position: fixed;
   bottom: 65%;
