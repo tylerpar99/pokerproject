@@ -31,13 +31,13 @@
   </div>
   <div class="row">
     <div class="col-sm-6">
-      <div class="position-absolute bottom-0 end-0">
+      <div id="playerCards" class="position-absolute bottom-0 end-0">
         <img src="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\PNG-cards-1.3\0.png" id="card1" class="float-end pokercard" alt="Player's first card">
         <img src="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\PNG-cards-1.3\0.png" id="card2" class="float-end pokercard" alt="Player's second card">
       </div>
     </div>
-      <div class="col-sm-6">
-        <div class="input-group playerControls text-center fixed-bottom w-50">
+      <div class="col-sm-6 fixed-bottom playerGroup">
+        <div class="input-group playerControls text-center fixed-bottom w-50" hidden>
           <input type="text" class="form-control" id="customBet" placeholder="Custom Bet" aria-label="User Insert Custom Bet">
           <button class="btn btn-secondary btn-outline-dark btn-lg" id="10" onclick="betMoney(this.id);" type="button">$10</button>
           <button class="btn btn-secondary btn-outline-dark btn-lg" id="50" onclick="betMoney(this.id);" type="button">$50</button>
