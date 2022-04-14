@@ -4,7 +4,6 @@ $( document ).ready(function(){
     if (e.key === 'Enter' || e.keyCode === 13) {
       var amount = $("#customBet").val()
       if(amount.includes("$")){
-        console.log('enter')
         amountrefined = amount.replace("$", "")
         betMoney(amountrefined);
       }
@@ -22,6 +21,12 @@ var comp1card1 = "0"
 var comp2card1 = "0"
 var comp2card2 = "0"
 var comp1card2 = "0"
+var comp3card1 = "0"
+var comp3card2 = "0"
+var comp4card1 = "0"
+var comp4card2= "0"
+var comp5card1 = "0"
+var comp5card2 = "0"
 function playerHand(){
   card1 = randomCard()
   card2 = randomCard()
@@ -36,17 +41,23 @@ function playerHand(){
 };
 
 var cardsUsed = []
+var visCommunity = [randomCard(), randomCard(), randomCard(), randomCard(), randomCard()]
 function playGame(){
   var userHand = playerHand();
   comp1card1 = randomCard();
   comp1card2 = randomCard();
   comp2card2 = randomCard();
   comp2card1 = randomCard();
+  comp3card1 = randomCard();
+  comp3card2 = randomCard();
+  comp4card1 = randomCard();
+  comp4card2 = randomCard();
+  comp5card1 = randomCard();
+  comp5card2 = randomCard();
   $('#card1').attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + card1 + '.png');
   $('#card2').attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + card2 + '.png');
   var computer1 = [comp1card1, comp2card1]
   var computer2 = [comp2card1, comp2card2]
-  var visCommunity = [randomCard(), randomCard(), randomCard()]
   playersTurn()
 
 
@@ -72,15 +83,14 @@ function playersTurn(kill){
   }
   $(".playerControls").attr("hidden", true)
   $(".progress").hide();
-  showCard("#river1", randomCard())
-  showCard("#river2", randomCard())
-  showCard("#river3", randomCard())
+  showCard("#river1", visCommunity[0])
+  showCard("#river2", visCommunity[1])
+  showCard("#river3", visCommunity[2])
   clearInterval(runTime)
   clearInterval(stopRun)
   };
 var timer = 10
 function runTimer(){
-  console.log("Running")
   timer = timer - 1;
   $("#gameTimer").attr("style", "width:"+timer+"0%")
   if(timer < 6 && timer > 3){
@@ -103,12 +113,10 @@ function randomCard(){
   const cardarr = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
   const suitarr = ["h", "c", "s", "d"]
   card = cardarr[getRandomInt(13)] + suitarr[getRandomInt(4)]
-  if (card in cardsUsed){
-    console.log(cardsUsed)
-    while(card in cardsUsed){
+  if (cardsUsed.includes(card)){
+    while(cardsUsed.includes(card)){
     card = cardarr[getRandomInt(13)] + suitarr[getRandomInt(4)]
     }
-    return card
   }
   cardsUsed.push(card)
 
@@ -116,8 +124,6 @@ function randomCard(){
 
 }
 function showCard(id, val){
-  console.log("called")
-  console.log(id)
   $(id).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + val + '.png');
 };
 
