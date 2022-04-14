@@ -72,6 +72,9 @@ function playersTurn(kill){
   }
   $(".playerControls").attr("hidden", true)
   $(".progress").hide();
+  showCard("#river1", randomCard())
+  showCard("#river2", randomCard())
+  showCard("#river3", randomCard())
   clearInterval(runTime)
   clearInterval(stopRun)
   };
@@ -113,6 +116,7 @@ function randomCard(){
 
 }
 function showCard(id, val){
+  console.log("called")
   console.log(id)
   $(id).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + val + '.png');
 };
