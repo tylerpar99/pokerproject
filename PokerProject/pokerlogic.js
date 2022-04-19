@@ -63,11 +63,12 @@ function playGame(){
 
 };
 
+var cardsShown = []
 var runTime = null
 var stopRun = null
 function playersTurn(kill){
   if(!kill){
-  $(".progress").attr("hidden", false);
+  $(".gameTimer").attr("hidden", false);
   $(".playerControls").attr("hidden", false)
   runTime = window.setInterval(runTimer, 1000)
   stopRun = window.setInterval(function(){
@@ -82,7 +83,7 @@ function playersTurn(kill){
     return
   }
   $(".playerControls").attr("hidden", true)
-  $(".progress").hide();
+  $(".gameTimer").hide();
   showCard("#river1", visCommunity[0])
   showCard("#river2", visCommunity[1])
   showCard("#river3", visCommunity[2])
@@ -92,15 +93,15 @@ function playersTurn(kill){
 var timer = 10
 function runTimer(){
   timer = timer - 1;
-  $("#gameTimer").attr("style", "width:"+timer+"0%")
+  $("#timer").html(timer)
   if(timer < 6 && timer > 3){
-    $("#gameTimer").attr({style: "width:"+timer+"0%", class: "progress-bar bg-warning"})
+    $("#timer").attr("class", "timermed")
   }
   else if(timer < 4 && timer > 0){
-    $("#gameTimer").attr({style: "width:"+timer+"0%", class: "progress-bar bg-danger"})
+    $("#timer").attr("class", "timerlow")
   }
   else if (timer == 0){
-    $(".progress").hide();
+    $(".gameTimer").hide();
   }
   return
 };
@@ -172,4 +173,8 @@ function playerFold(){
   $(".playerControls").hide()
   $(".playerGroup").prepend('<p class="stamp">FOLD</p>')
   playersTurn(true)
+}
+
+function checkHome(){
+  return
 }

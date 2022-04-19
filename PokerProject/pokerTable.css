@@ -8,6 +8,10 @@ body {
   overflow: hidden;
 }
 
+.homebutt {
+  font-family: 'Babylonica', cursive;
+}
+
 .pokercard {
   width: 15%;
   height: 15%;
@@ -26,6 +30,7 @@ body {
 
 .pot{
   position: fixed;
+  font-weight: bold;
   bottom: 40%;
   right: 50%;
 }
@@ -62,4 +67,25 @@ body {
   position: fixed;
   bottom: 20%;
   right: 30%;
+}
+
+.timerhigh {
+  font-weight: bold;
+  font-size: 500%;
+  font-family: 'Babylonica', cursive;
+  color: green;
+}
+
+.timermed {
+  font-weight: bold;
+  font-size: 500%;
+  font-family: 'Babylonica', cursive;
+  color: orange;
+}
+
+.timerlow {
+  font-weight: bold;
+  font-size: 500%;
+  font-family: 'Babylonica', cursive;
+  color: red;
 }
