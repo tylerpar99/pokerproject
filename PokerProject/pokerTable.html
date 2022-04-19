@@ -11,17 +11,39 @@
 <body>
   <div id="contain">
   </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to leave?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Progress will not be saved.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <a class="btn btn-primary" href="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\index.html" role="button">Yes</a>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="position-absolute top-50 start-50">
     <p class="pb-6 fs-2 pot" id="totalPot">$0</p>
   </div>
-  <h2 class="fs-1 text-white" id="balance">$5000</h2>
-  <div class="progress" hidden>
-    <div class="progress-bar bg-info" role="progressbar" id="gameTimer" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10"></div>
-  </div>
-  <div class="">
-    <img src="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\PNG-cards-1.3\0.png" id="river1" class="randomCard flop1" alt="Player's first card">
-    <img src="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\PNG-cards-1.3\0.png" id="river2" class="randomCard flop2" alt="Player's first card">
-    <img src="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\PNG-cards-1.3\0.png" id="river3" class="randomCard flop3" alt="Player's first card">
+  <div class = "row ps-3">
+    <button class="btn btn-dark col-auto homebutt border border-white" id="home" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button">Home</button>
+    <h2 class="fs-1 col-auto" id="balance">$5000</h2>
+    <div class="position-relative col">
+      <div class="gameTimer position-absolute top-0 end-0 pe-4" hidden>
+          <p class="timerhigh" id="timer">10</p>
+      </div>
+      </div>
+    </div>
+  <div>
+    <img src="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\PNG-cards-1.3\0.png" id="river1" class="randomCard flop1" alt="river first card">
+    <img src="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\PNG-cards-1.3\0.png" id="river2" class="randomCard flop2" alt="river second card">
+    <img src="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\PNG-cards-1.3\0.png" id="river3" class="randomCard flop3" alt="river third card">
   </div>
   <div class="">
     <img src="C:\Users\partont\Documents\PersonalProjects\PokerProject\pokerproject\PokerProject\PNG-cards-1.3\0.png" id="river2" class="randomCard turn" alt="Player's first card">

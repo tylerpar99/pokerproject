@@ -1,4 +1,17 @@
 body {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,8,0,1) 100%);
+  background-image: url("mainMenu.png");
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 600%;
+  font-family: 'Babylonica', cursive;
+}
+
+.button{
+  font-weight: bold;
+  font-size: 400%;
+  font-family: 'Babylonica', cursive;
+  color: black;
+  text-decoration: none;
 }
