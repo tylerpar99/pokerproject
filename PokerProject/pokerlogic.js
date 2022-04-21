@@ -59,8 +59,6 @@ function playGame(){
   var computer1 = [comp1card1, comp2card1]
   var computer2 = [comp2card1, comp2card2]
   playersTurn()
-
-
 };
 
 var cardsShown = []
@@ -74,7 +72,7 @@ function playersTurn(kill){
   stopRun = window.setInterval(function(){
     if(timer == 0){
       $(".playerControls").attr("hidden", true)
-      $(".progress").attr("hidden", true)
+      $(".gameTimer").attr("hidden", true)
       playerFold()
       clearInterval(runTime)
       clearInterval(stopRun)
@@ -87,12 +85,14 @@ function playersTurn(kill){
   showCard("#river1", visCommunity[0])
   showCard("#river2", visCommunity[1])
   showCard("#river3", visCommunity[2])
+  showCommunity()
   clearInterval(runTime)
   clearInterval(stopRun)
   };
 var timer = 10
 function runTimer(){
   timer = timer - 1;
+  console.log(timer)
   $("#timer").html(timer)
   if(timer < 6 && timer > 3){
     $("#timer").attr("class", "timermed")
@@ -124,6 +124,13 @@ function randomCard(){
   return card
 
 }
+
+function showCommunity(){
+  let waitTime = 0
+  console.log("waiting")
+  var computersPlaying = setTimeout(playersTurn, 5000)
+}
+
 function showCard(id, val){
   $(id).attr('src', 'C:/Users/partont/Documents/PersonalProjects/PokerProject/pokerproject/PokerProject/PNG-cards-1.3/' + val + '.png');
 };
@@ -173,8 +180,4 @@ function playerFold(){
   $(".playerControls").hide()
   $(".playerGroup").prepend('<p class="stamp">FOLD</p>')
   playersTurn(true)
-}
-
-function checkHome(){
-  return
 }
